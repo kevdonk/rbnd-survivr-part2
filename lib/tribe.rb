@@ -20,6 +20,7 @@ class Tribe
     begin
       outcast = @members.sample
     end while outcast == options[:immune]
+    @members.delete(outcast)
     outcast
   end
 end

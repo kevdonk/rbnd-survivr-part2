@@ -13,13 +13,15 @@ class Game
     @tribes = []
   end
   def merge(name)
-    new_tribe = []
+    new_tribe_members = []
     @tribes.each do |tribe|
       tribe.members.each do |member|
-        new_tribe.push(member)
+        new_tribe_members.push(member)
       end
     end
-    Tribe.new({name: name, members: new_tribe})
+    new_tribe = Tribe.new({name: name, members: new_tribe_members})
+    @tribes = [new_tribe]
+    return new_tribe
   end
   def individual_immunity_challenge
     @tribes.sample.members.sample
