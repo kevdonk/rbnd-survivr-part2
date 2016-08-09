@@ -5,7 +5,7 @@ class Tribe
     @name = options[:name]
     @members = options[:members]
 
-    puts "#{@name}"
+    puts "#{@name}".red
     @members.each do |member|
       print "#{member} "
     end

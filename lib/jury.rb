@@ -27,7 +27,7 @@ class Jury
   def announce_winner(voteResults)
     finalists = [voteResults.keys[0], voteResults.keys[1]]
     winner = voteResults[finalists[0]] > voteResults[finalists[1]] ? finalists[0] : finalists[1]
-    puts "Winner: #{winner}"
+    puts "Winner: #{winner}".red
     winner
   end
 end

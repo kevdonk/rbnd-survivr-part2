@@ -1,3 +1,4 @@
+require "colorizr"
 require_relative "game"
 require_relative "tribe"
 require_relative "contestant"
