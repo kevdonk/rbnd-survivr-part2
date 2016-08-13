@@ -17,9 +17,7 @@ class Tribe
   end
 
   def tribal_council(options)
-    begin
-      outcast = @members.sample
-    end while outcast == options[:immune]
+    outcast = members.reject {|member| member == options[:immune]}.sample
     @members.delete(outcast)
     outcast
   end

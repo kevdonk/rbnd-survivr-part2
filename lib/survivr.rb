@@ -20,31 +20,23 @@ require_relative "jury"
 
 #This is where you will write your code for the three phases
 def phase_one
-  x = 0
-  while x < 8 do
-    voting_tribe = @borneo.tribes.sample
-    voting_tribe.tribal_council({immune: voting_tribe.members.sample})
-    x += 1
+  8.times do
+    @borneo.immunity_challenge.tribal_council({immune: ''})
   end
-  x
 end
 
 def phase_two
-  x = 0
-  while x < 3 do
+  3.times do
     immune = @borneo.individual_immunity_challenge()
     @borneo.tribes[0].tribal_council({immune: immune})
-    x += 1
   end
 end
 
 def phase_three
-  x = 0
-  while x < 7 do
+  7.times do
     immune = @borneo.individual_immunity_challenge()
     jury_member = @borneo.tribes[0].tribal_council({immune: immune})
     @jury.add_member(jury_member)
-    x += 1
   end
 end
 
